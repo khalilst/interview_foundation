@@ -3,13 +3,14 @@
 namespace App\Models;
 
 use App\Casts\Encrypted;
+use App\Traits\HasGithub;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 
 class User extends Authenticatable
 {
-    use Notifiable;
+    use Notifiable, HasGithub;
 
     /**
      * The attributes that are mass assignable.
