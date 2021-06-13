@@ -16,4 +16,25 @@ use Illuminate\Support\Facades\Route;
 
 Route::group(['middleware' => 'auth:sanctum'], function () {
     Route::get('/user', fn(Request $request) => $request->user());
+
+    Route::group([
+        'prefix' => 'github',
+        'namespace' => 'Github',
+        'name' => 'github.',
+    ], function () {
+
+        /*** Token APIs ***/
+        Route::group([
+            'prefix' => 'token',
+            'namespace' => 'Token',
+            'name' => 'token.',
+        ], function () {
+
+            Route::get('/', 'GetController')->name('get');
+            Route::post('/', 'StoreController')->name('store');
+
+        });
+        /*** End - Token APIs ***/
+
+    });
 });
