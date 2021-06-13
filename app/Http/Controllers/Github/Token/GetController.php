@@ -9,7 +9,7 @@ use Illuminate\Http\Request;
 class GetController extends Controller
 {
     /**
-     * Handle the incoming request.
+     * Return the current user's Github Token.
      *
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\JsonResponse
