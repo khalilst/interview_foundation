@@ -47,4 +47,15 @@ trait HasGithub
 
         return collect($repos)->map(fn($repo) => (object) $repo);
     }
+
+    /**
+     * Update the given Github token.
+     *
+     * @param  string $token
+     * @return bool
+     */
+    public function updateGithubToken($token)
+    {
+        return $this->update(['github_token' => $token]);
+    }
 }

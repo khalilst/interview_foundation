@@ -16,6 +16,7 @@
         "guzzlehttp/guzzle": "^7.2",
         "http-interop/http-factory-guzzle": "^1.0",
         "laravel/framework": "^7.0",
+        "laravel/sanctum": "^2.11",
         "laravel/tinker": "^2.0",
         "laravel/ui": "2.x",
         "lcobucci/jwt": "^4.0"
