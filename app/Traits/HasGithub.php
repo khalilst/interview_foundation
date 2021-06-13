@@ -30,12 +30,12 @@ trait HasGithub
     }
 
     /**
-     * Return the user's starring repositories from GitHub.
+     * Return the user's starred repositories from GitHub.
      *
      * @param  int $page
      * @return Collection
      */
-    public function getStarringGithubRepos($page)
+    public function getGithubStars($page)
     {
         try {
             $this->authenticateInGitHub();

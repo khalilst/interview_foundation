@@ -20,21 +20,25 @@ Route::group(['middleware' => 'auth:sanctum'], function () {
     Route::group([
         'prefix' => 'github',
         'namespace' => 'Github',
-        'name' => 'github.',
+        'as' => 'github.',
     ], function () {
 
-        /*** Token APIs ***/
+        /*** Github Token APIs ***/
         Route::group([
             'prefix' => 'token',
             'namespace' => 'Token',
-            'name' => 'token.',
+            'as' => 'token.',
         ], function () {
 
             Route::get('/', 'GetController')->name('get');
             Route::post('/', 'StoreController')->name('store');
 
         });
-        /*** End - Token APIs ***/
+        /*** End - Github Token APIs ***/
+
+        /*** Github Stars API ***/
+        Route::get('/stars', 'StarController')->name('stars');
+        /*** End - Github Stars API ***/
 
     });
 });

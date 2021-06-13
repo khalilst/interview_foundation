@@ -10,7 +10,7 @@ use Illuminate\Http\Request;
 class StoreController extends Controller
 {
     /**
-     * Handle the incoming request.
+     * Stores the given Github token for current user.
      *
      * @param  TokenRequest  $request
      * @return \Illuminate\Http\JsonResponse
