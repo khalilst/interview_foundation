@@ -4,8 +4,8 @@
     <div class="container">
         <div class="row justify-content-center">
             @auth
-                <div class="col-md-2">
-                    {{ __('You are logged in!') }}
+                <div class="col-md-8 text-center mb-5">
+                    <github-token-form />
                 </div>
             @else
                 <div class="col-md-2">
