@@ -2,6 +2,8 @@ export const SET_LOADING = (state, payload) => state.loading = payload;
 
 export const SET_GITHUB_TOKEN = (state, payload) => state.github.token = payload;
 
+export const SET_GITHUB_STARS= (state, payload) => state.github.stars = payload;
+
 export const TOAST = (state, payload) => {
     window.vm.$bvToast.toast(payload.message, {
       ...payload,
