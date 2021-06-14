@@ -2,7 +2,7 @@
 
 namespace App\Traits;
 
-use App\Exceptions\InvalidGithubTokenException;
+use App\Exceptions\Github\InvalidTokenException as InvalidGithubTokenException;
 use Github\Client;
 use GrahamCampbell\GitHub\Facades\GitHub;
 
