@@ -22,6 +22,34 @@ try {
 window.axios = require('axios');
 
 window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
+window.axios.defaults.withCredentials = true;
+
+
+const axiosError = error => {
+  window.store.commit('SET_LOADING', false);
+
+  if (error.response.status === 500) {
+    window.store.commit('TOAST', {
+      title: 'Error',
+      message: error.response.data.message,
+      variant: 'danger',
+    });
+  }
+
+  return Promise.reject(error);
+}
+
+window.axios.interceptors.request.use((config) => {
+  window.store.commit('SET_LOADING', config.url);
+
+  return config;
+}, axiosError);
+
+window.axios.interceptors.response.use((response) => {
+  window.store.commit('SET_LOADING', false);
+
+  return response;
+}, axiosError);
 
 /**
  * Echo exposes an expressive API for subscribing to channels and listening
