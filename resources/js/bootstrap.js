@@ -28,13 +28,11 @@ window.axios.defaults.withCredentials = true;
 const axiosError = error => {
   window.store.commit('SET_LOADING', false);
 
-  if (error.response.status === 500) {
-    window.store.commit('TOAST', {
-      title: 'Error',
-      message: error.response.data.message,
-      variant: 'danger',
-    });
-  }
+  window.store.commit('TOAST', {
+    title: 'Error',
+    message: error.response.data.message,
+    variant: 'danger',
+  });
 
   return Promise.reject(error);
 }

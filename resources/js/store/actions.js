@@ -17,3 +17,9 @@ export const storeGithubToken = async ({ commit }, payload) => {
     variant: 'success',
   });
 }
+
+export const fetchGithubStars = async ({ commit }) => {
+  const { data } = await axios.get(endpoints.github.stars);
+
+  commit('SET_GITHUB_STARS', data);
+}
